@@ -184,7 +184,7 @@ if __name__ == "__main__":
 
     # Calculate initial temperature
     k_opt = current_solution.reshape((nx, ny)) * (k1 - k0) + k0
-    tolerance = 1.0e-4
+    tolerance = 1.0e-5
     A, b, T = calculate_temperature_matrix(Lx, 0.1*Lx, q, T0, nx, ny, k_opt, tolerance)
     T_reshaped = T.reshape((nx, ny))
     T_flipped = np.flipud(T_reshaped.T)
